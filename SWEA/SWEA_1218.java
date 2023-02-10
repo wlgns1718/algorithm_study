@@ -5,7 +5,6 @@ tag: Stack
 date:20230210
 */
 
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -19,7 +18,6 @@ class Solution {
 	static String temp1;
 	static boolean tri;
 	static int ans;
-
 	public static void main(String args[]) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -52,11 +50,9 @@ class Solution {
 							stack.pop();
 						} else {
 							tri = false;
-							
 						}
 					} else {
 						tri = false;
-						
 					}
 					break;
 				case "}":
@@ -65,39 +61,31 @@ class Solution {
 							stack.pop();
 						} else {
 							tri = false;
-							
 						}
 					} else {
 						tri = false;
-						
 					}
 					break;
 				case "]":
-
 					if (!stack.isEmpty()) {
 						if (stack.peek().equals("[")) {
 							stack.pop();
 						} else {
 							tri = false;
-							
 						}
 					} else {
 						tri = false;
-						
 					}
 					break;
 				case ">":
-
 					if (!stack.isEmpty()) {
 						if (stack.peek().equals("<")) {
 							stack.pop();
 						} else {
 							tri = false;
-							
 						}
 					} else {
 						tri = false;
-						
 					}
 					break;
 				}
@@ -105,11 +93,8 @@ class Solution {
 					ans = 0;
 					break;
 				}
-
 			}
 			System.out.printf("#%d %d%n", tc, ans);
 		}
-
 	}
-
 }
