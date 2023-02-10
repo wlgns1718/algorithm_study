@@ -57,21 +57,12 @@ class Solution {
 				if(!tri) {
 					break;
 				}
-				
-				
-				
 			}
 			for(int i = 0; i<8; i++) {
 				bw.write(q.poll()+" ");
 			}
 			bw.flush();
 			System.out.println();
-			
 		}
-		
-		
-		
-
 	}
-
 }
