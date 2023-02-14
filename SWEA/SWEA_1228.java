@@ -1,4 +1,9 @@
-package gumi.algo;
+/**
+title: 암호문1
+level : D3
+tag: data_structures, linkedList
+date:20230213
+ */
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
