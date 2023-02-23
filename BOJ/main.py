@@ -1,27 +1,34 @@
-"""
- title: OX퀴즈
- level : Bronz2
- tag: implemetation, string
- date:20230222
-"""
-
+def sol(queue,answer,visit,b,cnt):
+    while queue:
+        idx = queue.popleft()
+        for i in range(N + 1):
+            if idx in answer[i] and i not in visit:
+                queue.append(i)
+                cnt += 1
+                if b in answer[i]:
+                    return cnt+1
+                break
+    return -1
 import sys
-
+from collections import deque
 input = sys.stdin.readline
+N = int(input())
+answer = [[] for _ in range(N+1)]
 
-string = input().strip()
-temp = string.upper()
-ls = list(temp)
-dict = {chr(i):0 for i in range(65,91)}
+a,b = map(int,input().split())
+M = int(input())
+dict = {i : [] for i in range(1,N+1)}
+for _ in range(M):
+    x,y = map(int,input().split())
+    answer[x].append(y)
+print(answer)
+queue = deque();
+visit = set()
+cnt = 1
+for i in range(N+1):
+    if a in answer[i]:
+        queue.append(i)
+        visit.add(i)
+        break
 
-for i in ls:
-    dict[i] += 1
-max_num = max(dict.values())
-answer = []
-for key,value in dict.items():
-    if value == max_num:
-        answer.append(key)
-if len(answer)==1:
-    print(answer[0])
-else:
-    print('?')
+print(sol(queue,answer,visit,b,cnt))
